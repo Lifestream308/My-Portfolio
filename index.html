@@ -4,57 +4,13 @@
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <style>
-html {
-    scroll-behavior: smooth;
-}
-body {
-    background: url(https://virtualbg-brandstudio.netdna-ssl.com/wp-content/uploads/2020/06/professional-2-background-for-zoom-or-teams-unsplash.jpg);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center;
-    margin: 0 10% 0 10%;
-}
-.title {
-    background-color: orange;
-    width: fit-content;
-    border-radius: .5rem;
-    padding: .5rem;
-}
-.nameEmphasis {
-    color: rgb(0, 166, 255);
-}
-#appendContainer p {
-    color: rgb(115, 0, 255);
-    font-size: 140%;
-}
-.bgEmphasis {
-    background-color: antiquewhite;
-    border-radius: 1rem;
-    padding: .5rem;
-}
-.listEmphasis {
-    background-color: antiquewhite;
-    border-radius: 1rem;
-    padding: .1rem 0 .1rem 0;
-}
-.tools {
-    text-align: center;
-}
-.tools a{
-    margin: 0 2rem;
-}
-.h2Emphasis {
-    text-decoration: underline;
-}
-
-   </style>
+   <link href="main.css" rel="stylesheet" type="text/css"/>
    <title>My Portfolio</title>
+   <script src="mainjs.js" defer></script>
 </head>
 <body>
     <h1 class="title">Web Developer.</h1>
-    <h2>Hello. My name is <span class="nameEmphasis">Christian</span>.</h1>
+    <h2>Hello. My name is <span class="nameEmphasis">Christian.</span></h1>
     <h2>I am...</h2>
  
     <input onkeypress="hitEnter()" type="text" id="descriptionInput" name="descriptionInput" placeholder="Say something nice" autofocus> 
@@ -62,6 +18,10 @@ body {
     <button onclick="addDescription()">Add</button>
  
     <div id="appendContainer"></div>
+
+    <h2 class="h2Emphasis">Projects</h2>
+
+    <h2 class="h2Emphasis">Skills</h2>
 
     <h2 class="h2Emphasis">Background</h2>
     <p class="bgEmphasis">My programming journey started thanks to my local library. I found an old book at my library that taught people how to make their very first website. The content was outdated, but I was in love. After that book I moved on to more modern books, youtube videos, forums, and Javascript. I self taught myself HTML, CSS, and Javascript for 7 months before deciding to enroll in a bootcamp. Learning new programming skills and being able to apply them immediately is incredibly fun. Programming has made me believe that knowledge truly is power and I love it. My focus so far has been on web development, but I can't wait to learn about the endless career possibilities that programming offers.</p>
@@ -98,56 +58,5 @@ body {
             <input class="sendMessage" type="submit" value="Send Message">
         </form> 
     </footer>
-
-<script>
-// Takes value of the input box and appends to a div. DOM manipulation.
-    function addDescription() {
-        getParagraph = document.createElement("p")
-        description = document.getElementById("descriptionInput").value
-        getParagraph.append(description)
-        appendContainer = document.querySelector("#appendContainer")
-        appendContainer.append(getParagraph)
-        document.getElementById("descriptionInput").value = "";
-       }
-
-// Allows User to append input value by pressing "Enter"
-    function hitEnter() {
-        if (event.key === "Enter") {
-        addDescription()
-        }
-       }
-       
-    var i = 0; // initialize counter for typeWriter()
-    var j = 0; // initialize counter for typeWriter2()
-       
-    // Slowly types a word into the input box before calling addDescription()
-    function typeWriter() {
-    var txt = 'Dedicated.';
-    if (i < txt.length) {
-    document.getElementById("descriptionInput").value += txt.charAt(i);
-    i++;
-        if (i >= txt.length) {
-        addDescription()
-        typeWriter2()
-        }
-    setTimeout(typeWriter, 150);
- }
-}
-    // Same as typeWriter(). Type word into input box then call addDescription()
-    function typeWriter2() {
-        var txt = "Passionate."
-        if (j < txt.length) {
-        document.getElementById("descriptionInput").value += txt.charAt(j);
-        j++;
-            if (j >= txt.length) {
-            addDescription()
-            }
-        setTimeout(typeWriter2, 150);
-    }
-    }
-
-typeWriter()
- 
-</script>
 </body>
 </html>

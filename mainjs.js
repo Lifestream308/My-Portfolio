@@ -78,16 +78,3 @@ for (i = 0; i < close.length; i++) {
 
 // initiate function
 typeWriter()
-
-// console.log('before')
-// async function getText() {
-//   console.log('start')
-
-//   let x = await fetch('https://carflask308.herokuapp.com/getposts');
-//   let y = await x.text();
-//   let obj = JSON.parse(y);
-//   console.log(obj[0].title)
-
-//   console.log('end')
-// }
-// getText()

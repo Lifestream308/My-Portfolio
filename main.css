@@ -67,6 +67,16 @@ button {
     background-color: antiquewhite;
     border-radius: 1rem;
     padding: .1rem 0 .1rem 0;
+    display: flex;
+}
+.listEmphasis ul {
+    margin-right: 4rem;
+}
+.container {
+    display: flex;
+}
+.project {
+    margin-right: 3rem;
 }
 .tools {
     text-align: center;
